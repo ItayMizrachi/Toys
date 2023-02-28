@@ -9,6 +9,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 routesInit(app);
+app.get('*', function (req, res) {
+    res.status(404).sendFile(path.join(__dirname, "public", "page404.html"));
+});
+
 const server = http.createServer(app);
 let port = process.env.PORT || 3001;
 server.listen(port);
