@@ -30,7 +30,7 @@ router.get("/", async (req, res) => {
 // http://localhost:3001/toys/prices?min=60&max=200
 router.get("/prices", async (req, res) => {
     let minPrice = req.query.min ? Number(req.query.min) : 0;
-    let maxPrice = req.query.max ? Number(req.query.max) : Number.MAX_SAFE_INTEGER;
+    let maxPrice = req.query.max ? Number(req.query.max) : 999999;
     try {
         let data = await ToysModel.find({ price: { $gte: minPrice, $lte: maxPrice } });
         res.json(data);

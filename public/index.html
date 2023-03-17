@@ -67,7 +67,7 @@
                 </li>
                 <li>
                   <strong>max</strong> (optional): maximum price to filter by
-                  (default: maximum safe integer).
+                  (default: maximum 999999).
                   <br> <a target="_blank" href="https://toys-itay.cyclic.app//toys/prices?min=60&max=200">https://toys-itay.cyclic.app//toys/prices?min=60&max=200</a> 
                 </li>
               </ul>
@@ -125,6 +125,7 @@
                 <li>
                   <strong>Request Body</strong>: Toy data to be added in the
                   following format. 
+                 <li> <strong> price: </strong> 1-999999 </li>
                  <li> <strong> img_url </strong> is allowed and not required</li>
                   <pre>
 {
@@ -154,6 +155,7 @@
                 <li>
                   <strong>Request Body</strong>: Toy data to be updated in the
                   following format.
+                  <li> <strong> price: </strong> 1-999999 </li>
                   <li> <strong> img_url </strong> is allowed and not required</li>
                   <pre>
 {
